@@ -1,4 +1,4 @@
-package main
+package __go基础
 
 import (
 	"fmt"

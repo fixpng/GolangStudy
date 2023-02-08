@@ -1,4 +1,4 @@
-package main
+package __go基础
 
 func main2() {
 	//fmt.Println("Hell\"o\" WORLD\n")

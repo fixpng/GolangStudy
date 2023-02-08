@@ -1,4 +1,4 @@
-package main
+package __go基础
 
 // Print 这是一个用于打印的函数
 //
