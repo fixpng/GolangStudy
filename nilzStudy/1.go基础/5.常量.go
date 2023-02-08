@@ -1,4 +1,4 @@
-package __go基础
+package main
 
 import (
 	"GO20230123/nilzStudy/version"
