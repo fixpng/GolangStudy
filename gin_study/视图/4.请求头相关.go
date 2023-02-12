@@ -40,6 +40,13 @@ func main() {
 
 	})
 
+	// 设置响应头
+	router.GET("/res", func(c *gin.Context) {
+		c.Header("Token", "dafhdfhfgh$%^#%Y")
+		c.Header("Content-Type", "application/text; charset=utf-8")
+		c.JSON(0, gin.H{"data": "看看响应头"})
+	})
+
 	router.Run(":8080")
 
 }
