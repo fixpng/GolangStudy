@@ -48,6 +48,7 @@ func _UserRouterUnit(router *gin.RouterGroup) {
 	}
 }
 
+// TimeMiddleware 耗时统计
 func TimeMiddleware(c *gin.Context) {
 	startTime := time.Now()
 	c.Next()
