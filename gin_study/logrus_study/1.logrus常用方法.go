@@ -12,6 +12,7 @@ func main() {
 	logrus.Warningln("警告")
 	logrus.Infof("信息")
 	logrus.Debugf("debug")
+
 	logrus.Println("打印")
 
 	fmt.Println(logrus.GetLevel())

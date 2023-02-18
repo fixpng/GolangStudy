@@ -24,7 +24,6 @@ type MyFormatter struct {
 }
 
 func (f MyFormatter) Format(entry *logrus.Entry) ([]byte, error) {
-
 	// 设置颜色
 	var color int
 	switch entry.Level {
@@ -58,7 +57,6 @@ func (f MyFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 }
 
 func main() {
-
 	logrus.SetReportCaller(true) //显示行号
 	logrus.SetLevel(logrus.DebugLevel)
 	logrus.SetFormatter(&MyFormatter{Prefix: "GORM", TimeForMat: "2006-01-02 15:04:05"})

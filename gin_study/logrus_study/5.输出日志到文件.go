@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	file, _ := os.OpenFile("gin_study/logrus_study/info.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	//file, _ := os.Create("gin_study/logrus_study/info.log")
 
