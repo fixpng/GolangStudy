@@ -36,7 +36,8 @@ func main() {
 
 	// 自定义格式
 	router := gin.New()
-	router.Use(gin.LoggerWithFormatter(LogFormatterParams))
+	//router.Use(gin.LoggerWithFormatter(LogFormatterParams))
+	router.Use(gin.LoggerWithConfig(gin.LoggerConfig{Formatter: LogFormatterParams}))
 
 	router.GET("/index", index, index)
 	router.POST("/users", func(c *gin.Context) {})
