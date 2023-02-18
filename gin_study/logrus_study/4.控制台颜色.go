@@ -49,5 +49,4 @@ func main() {
 	fmt.Println("123456789啦啦啦啦啦")
 	fmt.Println("\033[31m 你好，这里的颜色是红色 \033[0m")
 	PrintColor0()
-
 }
