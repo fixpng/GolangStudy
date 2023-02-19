@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"os"
-	"time"
 )
 
 type FileLevelHook struct {
@@ -40,17 +39,16 @@ func (hook FileLevelHook) Fire(entry *logrus.Entry) error {
 }
 
 func initLevel(logPath string) {
-	fileDate := time.Now().Format("2006-01-02")
 	//创建目录
-	err := os.MkdirAll(fmt.Sprintf("%s/%s", logPath, fileDate), os.ModePerm)
+	err := os.MkdirAll(fmt.Sprintf("%s", logPath), os.ModePerm)
 	if err != nil {
 		logrus.Error(err)
 		return
 	}
-	allfile, err := os.OpenFile(fmt.Sprintf("%s.log", allLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
-	errfile, err := os.OpenFile(fmt.Sprintf("%s.log", errLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
-	warnfile, err := os.OpenFile(fmt.Sprintf("%s.log", warnLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
-	infofile, err := os.OpenFile(fmt.Sprintf("%s.log", infoLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
+	allfile, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logPath, allLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
+	errfile, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logPath, errLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
+	warnfile, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logPath, warnLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
+	infofile, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logPath, infoLog), os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0600)
 
 	fileHook := FileLevelHook{allfile, errfile, warnfile, infofile, logPath}
 	logrus.AddHook(&fileHook)
