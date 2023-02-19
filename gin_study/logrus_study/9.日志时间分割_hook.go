@@ -51,7 +51,7 @@ func InitFile(logPath, appName string) {
 		return
 	}
 	fileHook := FileDateHook{file, logPath, fileDate, appName}
-	logrus.AddHook(fileHook)
+	logrus.AddHook(&fileHook)
 }
 
 func main() {
