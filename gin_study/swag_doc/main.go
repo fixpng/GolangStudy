@@ -7,6 +7,13 @@ import (
 	gs "github.com/swaggo/gin-swagger"
 )
 
+type Response struct {
+	Code int    `json:"code"` //响应码
+	Msg  string `json:"msg"`  //描述
+	Data any    `json:"data"` //具体的数据
+
+}
+
 // UserList 用户列表
 // @Tags 用户管理
 // @Summary 用户列表
@@ -14,9 +21,9 @@ import (
 // @Param limit query string false "返回多少条"
 // @Router /api/users [get]
 // @Produce json
-// @Success 200 {object} string
+// @Success 200 {object} Response
 func UserList(c *gin.Context) {
-	c.JSON(200, gin.H{"mag": "你好"})
+	c.JSON(200, Response{0, "成功", 21})
 }
 
 // @title 倪半仙博客系统后端api文档

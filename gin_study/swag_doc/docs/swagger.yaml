@@ -1,4 +1,16 @@
 basePath: /
+definitions:
+  main.Response:
+    properties:
+      code:
+        description: 响应码
+        type: integer
+      data:
+        description: 具体的数据
+      msg:
+        description: 描述
+        type: string
+    type: object
 host: 127.0.0.1:8080
 info:
   contact: {}
@@ -20,7 +32,7 @@ paths:
         "200":
           description: OK
           schema:
-            type: string
+            $ref: '#/definitions/main.Response'
       summary: 用户列表
       tags:
       - 用户管理
