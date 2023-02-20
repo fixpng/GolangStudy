@@ -1,0 +1,27 @@
+basePath: /
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: 这是倪半仙博客系统后端api文档
+  title: 倪半仙博客系统后端api文档
+  version: "1.0"
+paths:
+  /api/users:
+    get:
+      description: 返回一个用户列表，可根据查询参数指定
+      parameters:
+      - description: 返回多少条
+        in: query
+        name: limit
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 用户列表
+      tags:
+      - 用户管理
+swagger: "2.0"
