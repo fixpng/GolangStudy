@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "GO20230123/gin_study/swag_doc/docs"
+	_ "GO20230123/gin_study/swag_doc/docs" //swag生成的目录
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	gs "github.com/swaggo/gin-swagger"
@@ -26,9 +26,9 @@ func UserList(c *gin.Context) {
 	c.JSON(200, Response{0, "成功", 21})
 }
 
-// @title 倪半仙博客系统后端api文档
+// @title FixPng博客系统后端api文档
 // @version 1.0
-// @description 这是倪半仙博客系统后端api文档
+// @description 这是FixPng博客系统后端api文档
 // @host 127.0.0.1:8080
 // @BasePath /
 func main() {
