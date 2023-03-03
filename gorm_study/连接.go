@@ -31,7 +31,7 @@ func init() {
 			SingularTable: false, //是否单数表名(表名后缀加s？)
 			NoLowerCase:   true,  //字段不要小写转换
 		},
-		//Logger: logger.Default.LogMode(logger.Info),
+		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {
 		panic("连接数据库失败, error=" + err.Error())
