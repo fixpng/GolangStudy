@@ -24,5 +24,5 @@ func readDir(path string) {
 }
 
 func main() {
-	readDir("nilzStudy")
+	readDir("basic_study")
 }

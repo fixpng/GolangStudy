@@ -11,7 +11,7 @@ import (
 func IndexHandler(res http.ResponseWriter, req *http.Request) {
 	switch req.Method {
 	case "GET":
-		data, err := os.ReadFile("nilzStudy/37.http/server/index.html")
+		data, err := os.ReadFile("basic_study/37.http/server/index.html")
 		if err != nil {
 			fmt.Println(err)
 		}

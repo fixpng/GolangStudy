@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GO20230123/nilzStudy/version"
+	"GO20230123/basic_study/version"
 	"fmt"
 )
 
