@@ -1,12 +1,11 @@
 package main
 
 import (
+	"GO20230123/skill_demo/22-timewheel/txt"
 	"fmt"
-	"goog/22-timewheel/txt"
+	"github.com/rfyiamcool/go-timewheel"
 	"runtime"
 	"time"
-
-	"github.com/rfyiamcool/go-timewheel"
 )
 
 func rawTest(count int, loop int) {

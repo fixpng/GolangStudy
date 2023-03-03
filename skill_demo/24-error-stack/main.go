@@ -1,7 +1,7 @@
 package main
 
 import (
-	"goog/24-error-stack/errorSimple"
+	errorSimple "GO20230123/skill_demo/24-error-stack/errorSimple"
 )
 
 func main() {
