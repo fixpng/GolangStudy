@@ -1,9 +1,11 @@
 package main
 
+import "time"
+
 type Tag struct {
 	ID       uint
 	Name     string
-	Articles []Article `gorm:"many2many:article_tags;"` // 用于反向引用
+	Articles []Article `gorm:"many2many:article_tags"` // 用于反向引用
 }
 
 type Article struct {
@@ -12,9 +14,15 @@ type Article struct {
 	Tags  []Tag `gorm:"many2many:article_tags;"`
 }
 
-func main() {
-	//DB.AutoMigrate(&Tag{}, &Article{})
+type ArticleTag struct {
+	ArticleID uint      `gorm:"primaryKey"`
+	TagID     uint      `gorm:"primaryKey"`
+	CreatedAt time.Time `json:"created_at"`
+}
 
+func main() {
+	DB.SetupJoinTable(&Article{}, "Tags", &ArticleTag{})
+	DB.AutoMigrate(&Tag{}, &Article{})
 	//DB.Create(&Article{
 	//	Title: "python基础",
 	//	Tags: []Tag{
