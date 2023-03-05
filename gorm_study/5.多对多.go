@@ -1,28 +1,26 @@
 package main
 
-import "time"
-
-type Tag struct {
-	ID       uint
-	Name     string
-	Articles []Article `gorm:"many2many:article_tags"` // 用于反向引用
-}
-
-type Article struct {
-	ID    uint
-	Title string
-	Tags  []Tag `gorm:"many2many:article_tags;"`
-}
-
-type ArticleTag struct {
-	ArticleID uint      `gorm:"primaryKey"`
-	TagID     uint      `gorm:"primaryKey"`
-	CreatedAt time.Time `json:"created_at"`
-}
+//type Tag struct {
+//	ID       uint
+//	Name     string
+//	Articles []Article `gorm:"many2many:article_tags"` // 用于反向引用
+//}
+//
+//type Article struct {
+//	ID    uint
+//	Title string
+//	Tags  []Tag `gorm:"many2many:article_tags;"`
+//}
+//
+//type ArticleTag struct {
+//	ArticleID uint      `gorm:"primaryKey"`
+//	TagID     uint      `gorm:"primaryKey"`
+//	CreatedAt time.Time `json:"created_at"`
+//}
 
 func main() {
-	DB.SetupJoinTable(&Article{}, "Tags", &ArticleTag{})
-	DB.AutoMigrate(&Tag{}, &Article{})
+	//DB.SetupJoinTable(&Article{}, "Tags", &ArticleTag{})
+	//DB.AutoMigrate(&Tag{}, &Article{})
 	//DB.Create(&Article{
 	//	Title: "python基础",
 	//	Tags: []Tag{
@@ -61,10 +59,14 @@ func main() {
 	//DB.Model(&article).Association("Tags").Append(&tag)
 
 	//
-	var article Article
-	var tag Tag
-	DB.Preload("Tags").Take(&article, 1)
-	DB.Take(&tag, 2)
-	DB.Model(&article).Association("Tags").Replace(&tag)
+	//var article Article
+	//var tag Tag
+	//DB.Preload("Tags").Take(&article, 1)
+	//DB.Take(&tag, 2)
+	//DB.Model(&article).Association("Tags").Replace(&tag)
+
+	//var tag Tag
+	//DB.Raw("select a.* from tb_Tags a ").Scan(&tag)
+	//fmt.Println(tag)
 
 }

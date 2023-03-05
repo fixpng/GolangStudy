@@ -1,20 +1,20 @@
 package main
 
-type User struct {
-	ID       uint
-	Name     string
-	Age      int
-	Gender   bool
-	UserInfo UserInfo // 通过UserInfo可以拿到用户详情信息
-}
-
-type UserInfo struct {
-	UserID uint // 外键
-	User   *User
-	ID     uint
-	Addr   string
-	Like   string
-}
+//type User struct {
+//	ID       uint
+//	Name     string
+//	Age      int
+//	Gender   bool
+//	UserInfo UserInfo // 通过UserInfo可以拿到用户详情信息
+//}
+//
+//type UserInfo struct {
+//	UserID uint // 外键
+//	User   *User
+//	ID     uint
+//	Addr   string
+//	Like   string
+//}
 
 func main() {
 	//DB.AutoMigrate(&User{}, &UserInfo{})

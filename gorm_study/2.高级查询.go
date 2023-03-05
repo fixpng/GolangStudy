@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"gorm.io/gorm"
 )
 
@@ -114,9 +113,9 @@ func main() {
 	//	map[string]any{"name": "枫枫", "age": 23}).Find(&studentList)
 	//fmt.Println(studentList)
 
-	var res []map[string]any
-	DB.Model(Student{}).Scopes(Age23).Find(&res)
-	fmt.Println(res)
+	//var res []map[string]any
+	//DB.Model(Student{}).Scopes(Age23).Find(&res)
+	//fmt.Println(res)
 }
 
 func Age23(db *gorm.DB) *gorm.DB {
